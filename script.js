@@ -44,3 +44,10 @@ function resetForm() {
     document.getElementById('nameInput').value = '';
     document.getElementById('result').style.display = 'none';
 }
+
+window.addEventListener('beforeunload', function (e) {
+            var message = 'Anda sedang melanggar ketentuan dengan meninggalkan halaman ini.';
+            e.preventDefault();
+            e.returnValue = message; // Diperlukan untuk beberapa browser seperti Chrome
+            return message;
+}
